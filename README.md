@@ -1,23 +1,61 @@
 # Cloud-Native E-commerce Platform
 
-## Project Description
+## Project Summary
 
-This project demonstrates a scalable and resilient cloud-native e-commerce platform deployed on Amazon Web Services (AWS). It showcases best practices in modern DevOps, including Infrastructure as Code (IaC) with Terraform, continuous integration and continuous deployment (CI/CD) with GitHub Actions, containerization with Docker, and orchestration with Kubernetes (EKS). The platform is designed for high availability, scalability, and observability, incorporating robust monitoring and logging solutions.
+As part of my End-to-End DevOps Project, I undertook the task of deploying a secure containerized e-commerce application on AWS infrastructure. This project aimed to leverage Kubernetes for container orchestration while implementing industry best practices for security and continuous integration/continuous deployment (CI/CD).
 
-## Architecture Overview
+## Task
+
+To accomplish this, I identified the need for a comprehensive set of tools and technologies to ensure the security and reliability of the infrastructure and application deployments. My task involved selecting and integrating various tools into the project workflow to address key areas such as cloud provisioning, security scanning, containerization, container orchestration, and monitoring.
+
+## Architecture:
 
 ![Architecture Diagram](architecture_diagram.png)
 
-The architecture leverages a microservices approach, with distinct components for the frontend, backend API, and database. All services are containerized and orchestrated by Amazon EKS, ensuring efficient resource utilization and simplified management. An Application Load Balancer (ALB) distributes incoming traffic, while AWS RDS provides a managed PostgreSQL database. Monitoring and logging are handled by a combination of AWS CloudWatch, Prometheus, and Grafana, offering comprehensive insights into the platform's health and performance.
+## Tools:
 
-## Features
+### Cloud Infrastructure Setup:
 
-- **Scalable Microservices:** Designed to handle varying loads by scaling individual services independently.
-- **Automated Infrastructure:** Terraform scripts automate the provisioning of all AWS resources, ensuring consistency and repeatability.
-- **CI/CD Pipelines:** GitHub Actions automate the build, test, and deployment processes, enabling rapid and reliable software delivery.
-- **Container Orchestration:** Kubernetes on EKS manages containerized applications, providing self-healing, load balancing, and rolling updates.
-- **Comprehensive Monitoring:** Integrated Prometheus and Grafana for real-time metrics and dashboards, complemented by AWS CloudWatch for logs and alarms.
-- **High Availability:** Redundant deployments across multiple Availability Zones to ensure continuous service.
+- **AWS:** (IAM, EKS, ALB, Route53, CLI, etc)
+- **Terraform:** (Infrastructure As Code)
+
+### Continuous Integration & Continuous Deployment:
+
+- **GitHub Actions:** (CI/CD pipeline/workflow)
+![GitHub Actions CI/CD Pipeline](github_actions_ci_cd.png)
+- **ArgoCD:** (for continuous delivery and GitOps)
+![ArgoCD Dashboard](argocd_dashboard.png)
+
+### Security (SAST/SCA) Scanning:
+
+- **Sonarqube:** (Code quality analysis through SAST Scanning)
+![Sonarqube Dashboard](sonarqube_dashboard.png)
+- **Snyk:** (Vulnerability scanning and dependency management analysis)
+![Snyk Dashboard](snyk_dashboard.png)
+- **Trivy:** (Filesystem and Container image vulnerability scanning)
+
+### Container/Container Orchestration:
+
+- **Docker/Dockerhub:** (Containerization + storing backend and frontend as Docker Images)
+- **Kubernetes:** (Container Orchestration)
+- **Helm:** (installations and deployments)
+
+### Monitoring:
+
+- **Prometheus:** (Collected metrics from clusters, pods etc)
+![Prometheus Dashboard](prometheus_dashboard.png)
+- **Grafana:** (Visualise data/analytics from prometheus using dashboards)
+![Grafana Dashboard](grafana_dashboard.png)
+
+## Working Application:
+![Working Application](working_application.png)
+
+## Working Services:
+![Working Services](working_services.png)
+
+## AWS: Route53 DNS A Record:
+![Route53 DNS A Record](route53_dns_a_record.png)
+
 
 ## Setup Guide
 
@@ -36,7 +74,7 @@ Before you begin, ensure you have the following installed and configured:
 1.  **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/cloud-native-ecommerce.git
+    git clone https://github.com/anasarb1/cloud-native-ecommerce.git
     cd cloud-native-ecommerce
     ```
 
@@ -110,17 +148,5 @@ Contributions are welcome! Please fork the repository and submit pull requests.
 
 This project is licensed under the MIT License.
 
-
-
-
-## Impact and Achievements
-
-This project demonstrates the ability to design, implement, and manage a robust cloud-native application, leading to significant improvements in deployment efficiency and system reliability. Key achievements include:
-
-- **Reduced Deployment Time:** Implemented a fully automated CI/CD pipeline using GitHub Actions, reducing manual deployment efforts by approximately 80% and enabling rapid iteration and feature delivery.
-- **Enhanced Scalability and Reliability:** Leveraged Amazon EKS for Kubernetes orchestration, ensuring high availability and automatic scaling of application components to handle fluctuating user loads, minimizing downtime and improving user experience.
-- **Cost Optimization:** Designed infrastructure using Terraform with a focus on efficient resource allocation, utilizing managed services like AWS RDS and EKS to reduce operational overhead and optimize cloud spending.
-- **Improved Observability:** Integrated Prometheus and Grafana for comprehensive real-time monitoring and visualization of application and infrastructure metrics, enabling proactive identification and resolution of performance bottlenecks.
-- **Standardized Infrastructure:** Utilized Infrastructure as Code (Terraform) to define and provision all cloud resources, ensuring consistency across environments and significantly reducing configuration drift.
 
 
